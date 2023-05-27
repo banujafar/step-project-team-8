@@ -6,7 +6,7 @@ const imagemin = require("gulp-imagemin");
 const uglify = require("gulp-uglify");
 const browsersync = require('browser-sync').create();
 const cleanCSS = require("gulp-clean-css");
-const clean = require("gulp-clean");
+//const clean = require("gulp-clean");
 const minify = require("gulp-js-minify");
 
 //Convert html files
