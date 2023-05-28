@@ -6,7 +6,7 @@ const imagemin = require("gulp-imagemin");
 const uglify = require("gulp-uglify");
 const browsersync = require('browser-sync').create();
 const cleanCSS = require("gulp-clean-css");
-//const clean = require("gulp-clean");
+const clean = require("gulp-clean");
 const minify = require("gulp-js-minify");
 
 //Convert html files
@@ -27,15 +27,11 @@ gulp.task("compileScss", () => {
   return gulp
     .src("src/scss/styles.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(
-      autoprefixer({
-        browsers: ["last 2 versions"],
-        cascade: false,
-      })
-    )
     .pipe(concat("styles.min.css"))
+    .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(gulp.dest("dist/css"));
+    .pipe(gulp.dest("dist/css"))
+    .pipe(browsersync.stream());
 });
 
 //Minify js
@@ -48,7 +44,12 @@ gulp.task("minifyJs", () => {
     .pipe(minify())
     .pipe(gulp.dest("dist/js"));
 });
+//clean task
 
+gulp.task('clean', function () {
+  return gulp.src('dist', { allowEmpty: true, read: false })
+    .pipe(clean());
+});
 //Watch gulp tasks
 
 gulp.task("watch", () => {
@@ -57,8 +58,15 @@ gulp.task("watch", () => {
       baseDir: ".",
     },
   });
-  gulp.watch("index.html", gulp.series("convertHtml", browsersync.reload));
-  gulp.watch("src/scss/**/*.scss", gulp.series("compileScss"));
-  gulp.watch("src/js/*.js", gulp.series("minifyJs"));
-  gulp.watch("src/img/**/*", gulp.series("convertImages"));
+  gulp.watch("index.html", gulp.series("convertHtml")).on('change', browsersync.reload);
+  gulp.watch("src/scss/**/*.scss", gulp.series("compileScss")).on('change', browsersync.reload);
+  gulp.watch("src/js/*.js", gulp.series("minifyJs")).on('change', browsersync.reload);
+  gulp.watch("src/img/**/*", gulp.series("convertImages")).on('change', browsersync.reload);
 });
+
+gulp.task("build", gulp.series("clean", "compileScss", "minifyJs", "convertHtml", "convertImages"))
+
+
+gulp.task("dev", gulp.series("watch"))
+
+gulp.task('default', gulp.series('dev'));
