@@ -1,0 +1,82 @@
+.revolution {
+  width: 100%;
+  .container {
+    padding: 50px 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 27px;
+    h2 {
+      text-transform: uppercase;
+      color: #635c73;
+      font-size: 26px;
+      font-weight: 700;
+      line-height: 28px;
+      font-family: $Montserrat;
+    }
+    p {
+      @include myfont(14px, 400, $Lato, $dark-font);
+      line-height: 21px;
+      max-width: 861px;
+    }
+    .buttons_container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      button {
+        box-sizing: content-box;
+        width: 108px;
+        border: none;
+        padding: 3px;
+        border: 1px solid rgba(31, 35, 40, 0.15);
+        justify-content: space-evenly;
+        border-radius: 6px;
+        box-shadow: 0 1px 0 rgba(31, 35, 40, 0.04),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 12px;
+        color: #24292f;
+        background-color: white;
+        font-weight: bold;
+        .stats {
+          background-color: #e2e4e6;
+          border-radius: 900px;
+          padding: 3px;
+        }
+
+        &:hover {
+          background-color: #f3f4f6;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+  .revolution .container h2 {
+    font-size: 42px;
+    line-height: 50px;
+  }
+  .revolution .container p {
+    font-size: 21px;
+    line-height: 32px;
+  }
+}
+@media screen and (min-width: 993px) {
+  .revolution .container h2 {
+    font-size: 54px;
+    margin-bottom: 30px;
+  }
+  .revolution .container p {
+    font-size: 21px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+}

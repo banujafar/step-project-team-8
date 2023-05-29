@@ -1,0 +1,93 @@
+.hereis {
+  width: 100%;
+  .container {
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    h2 {
+      @include myfont(32px, 700, $Montserrat, $purple);
+    }
+    .editor-container {
+      width: 100%;
+      position: relative;
+      img {
+        width: 100%;
+        // position: absolute;
+        // left: 0;
+      }
+    }
+    .card {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 25px;
+      &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        &__subheader {
+          @include myfont(16px, 400, $Montserrat, $dark-font);
+        }
+        &__p {
+          @include myfont(14px, 400, $Lato, #848e97);
+          line-height: 21px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+  .hereis .container {
+    gap: 55px;
+  }
+  .hereis .container .card {
+    flex-direction: row;
+    text-align: left;
+  }
+  .hereis .container .card__info {
+    align-items: start;
+  }
+  .hereis .container h2 {
+    font-size: 42px;
+  }
+}
+@media screen and (min-width: 993px) {
+  .hereis {
+    background-color: #f4f4f4;
+  }
+  .hereis .container {
+    gap: 55px;
+  }
+  .hereis .container .card {
+    flex-direction: row;
+    text-align: left;
+  }
+  .hereis .container .card__info {
+    align-items: start;
+  }
+  .hereis .container h2 {
+    font-size: 42px;
+  }
+  .hereis .container {
+    gap: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "card1 header"
+      "card2 image"
+      "card3 image"
+      "card4 image";
+    .editor-container {
+      grid-area: image;
+    }
+    h2 {
+      grid-area: header;
+    }
+  }
+}
