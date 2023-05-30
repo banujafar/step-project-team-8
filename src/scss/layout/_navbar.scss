@@ -1,0 +1,222 @@
+.navbar {
+    @include flex($justifyContent: space-around, $alignItems: center);
+    background-color: $nav-bg;
+    padding: 20px 10px;
+    min-width: 320px;
+
+    &__top {
+        @include flex(30px, $justifyContent: space-between, $alignItems: center);
+        min-width: 55%;
+    }
+
+    &__logo {
+        @include flex(10px, $justifyContent: center, $alignItems: center);
+    }
+
+    &__header-text {
+        @include myfont(24px, 700, $Lato, $purple);
+        display: none;
+    }
+
+    .navbar-menu {
+        display: none;
+
+        &__link {
+            @include myfont(16px, 700, $Montserrat, $purple);
+        }
+    }
+
+    .drop-menu {
+        .disabled {
+            display: none;
+        }
+
+        z-index: 1;
+
+        .active {
+            display: block;
+        }
+
+        .hamburger-menu {
+            position: relative;
+            width: 35px;
+            height: 35px;
+
+            &--active::after {
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 25px;
+                top: 8px;
+                left: 20px;
+                background-color: $white ;
+                transform: rotate(135deg);
+            }
+
+            &--active::before {
+                content: '';
+                position: absolute;
+                width: 2px;
+                top: 8px;
+                left: 20px;
+                height: 25px;
+                background-color: $white ;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+                -moz-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                -o-transform: rotate(45deg);
+            }
+        }
+
+
+        &--active {
+            display: none;
+        }
+
+        position: relative;
+
+        i {
+            color: $white;
+        }
+
+        &__list {
+            background-color: $drop-menu-bg;
+            position: absolute;
+            top: 55px;
+            right: -10px;
+            width: 290px;
+            height: 370px;
+            display: none;
+        }
+
+        &__item {
+            padding: 28px 30px;
+            border-bottom: 2px solid #3b3b3b;
+
+            &--active {
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    height: 8px;
+                    left: -20px;
+                    bottom: 40px;
+                    transform: rotate(90deg);
+                    width: 50px;
+                    background-color: $purple;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: "active focus";
+                    @include myfont(16px, 700, $Montserrat, $active-text-color);
+                    right: 10px;
+                    bottom: 32px;
+
+
+                }
+            }
+        }
+
+        &__link {
+            @include myfont(26px, 400, $Montserrat, $white);
+
+            &--active {
+                color: $purple;
+            }
+        }
+
+        img {
+            @include image();
+            cursor: pointer;
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    }
+
+    &__button {
+        @include button($bgColor: $purple);
+        padding: 10px 30px;
+        @include myfont(15px, 700, $Montserrat, $white);
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+    .navbar {
+        &__top {
+            width: 100%;
+        }
+
+        @include flex(10px,
+            $direction: column,
+            $justifyContent: center,
+            $alignItems: center);
+
+        .drop-menu {
+            img {
+                display: none;
+            }
+
+            &__list {
+                display: none;
+
+            }
+        }
+
+        .navbar-menu {
+            @include flex(2rem, $justifyContent: center, $alignItems: center);
+
+            //    &--disabled{
+            //     display: block;
+            //    }
+        }
+
+        &__header-text {
+            display: flex;
+        }
+
+        &__button {
+            padding-left: 35px;
+            padding-right: 35px;
+        }
+    }
+}
+
+@media screen and (min-width: 993px) {
+    .navbar {
+        position: relative;
+
+        .drop-menu {
+            img {
+                display: none;
+            }
+
+            &__list {
+                display: none;
+
+            }
+
+        }
+
+        &__header-text {
+            display: flex;
+        }
+
+        .navbar-menu {
+            position: absolute;
+            right: 250px;
+        }
+
+        .navbar-menu {
+            @include flex(2rem, $justifyContent: center, $alignItems: center);
+        }
+
+        &__top {
+            width: 100%;
+        }
+    }
+}
+

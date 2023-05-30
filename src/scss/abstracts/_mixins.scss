@@ -4,3 +4,22 @@
   font-weight: $weight;
   color: $color;
 }
+@mixin flex($gap:null,$direction:row,$justifyContent,$alignItems){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  gap: $gap;
+
+}
+@mixin image(){
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@mixin button($bgColor){
+  background-color: $bgColor;
+  border: none;
+  border-radius: 40px;
+ 
+}
