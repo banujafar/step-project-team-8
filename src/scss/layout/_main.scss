@@ -5,7 +5,7 @@
 }
 
 .main {
-  background: url('../img/img 1.png');
+  background: url('../img/header-img.png');
   @include image;
   min-width: 320px;
   width: 100%;
@@ -41,6 +41,12 @@
     @include button($bgColor: $purple);
     padding: 12px 32px;
     @include myfont(18px, 700, $Montserrat, $white);
+    cursor: pointer;
+    
+    &:hover{
+      background-color: $white;
+      color:$purple;
+    }
   }
 
   &__header-text {

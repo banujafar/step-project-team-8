@@ -11,11 +11,21 @@
 
     &__logo {
         @include flex(10px, $justifyContent: center, $alignItems: center);
+        cursor: pointer;
+        
+        img:hover {
+            content: url("../../../dist/img/Logo-hover.png");
+         } 
     }
 
     &__header-text {
         @include myfont(24px, 700, $Lato, $purple);
         display: none;
+        cursor: pointer;
+
+        &:hover{
+            color: $white;
+        }
     }
 
     .navbar-menu {
@@ -23,6 +33,10 @@
 
         &__link {
             @include myfont(16px, 700, $Montserrat, $purple);
+
+            &:hover{
+                color: $white;
+            }
         }
     }
 
@@ -51,7 +65,8 @@
                 left: 20px;
                 background-color: $white ;
                 transform: rotate(135deg);
-            }
+                
+}
 
             &--active::before {
                 content: '';
@@ -62,11 +77,8 @@
                 height: 25px;
                 background-color: $white ;
                 transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                -moz-transform: rotate(45deg);
-                -ms-transform: rotate(45deg);
-                -o-transform: rotate(45deg);
-            }
+                
+}
         }
 
 
@@ -141,6 +153,12 @@
         @include button($bgColor: $purple);
         padding: 10px 30px;
         @include myfont(15px, 700, $Montserrat, $white);
+        cursor: pointer;
+
+        &:hover{
+           background-color: $white;
+           color: $purple;
+        }
     }
 }
 
