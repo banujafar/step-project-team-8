@@ -1,0 +1,81 @@
+.people-talk{
+background:url('../img/peopletalk/Layer 1.png');
+@include image();
+min-height: 768px;
+min-width: 320px;
+padding-top: 100px;
+padding-bottom: 30px;
+ &__header-text{
+    @include myfont(36px, 700, $Montserrat, $white);
+    text-align: center;
+    margin-bottom: 50px;
+ }
+ &__container{
+    @include flex(30px,
+      $direction: column,
+      $justifyContent: center,
+      $alignItems: center);
+ }
+ &__row{
+    @include flex(15px,
+      $direction: column,
+      $justifyContent: center,
+      $alignItems: center);
+ }
+ &__text{
+    @include myfont(16px, 700, $Lato, $white);
+    font-style: italic;
+    line-height: 24px;
+    text-align: center;
+ }
+ &__sub-text{
+    @include myfont(14px, 700, $Lato, $sub-text-color);
+    text-align: center;
+    margin:30px auto;
+    line-height: 21px;
+    position: relative;
+    max-width: 887px;
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left:5%;
+        width:90%;
+        height: 2px;
+        background-color: $hr-color;
+    }
+ }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+    .people-talk{
+        &__container{
+            @include flex(55px,
+            $justifyContent: center,
+            $alignItems: center);
+            flex-wrap: wrap;
+        }
+        &__row{
+            flex-basis: 45%;
+        }
+       
+    }
+  
+  }
+
+  @media screen and (min-width: 993px) {
+    .people-talk{
+        &__container{
+            @include flex(55px,
+            $justifyContent: center,
+            $alignItems: center);
+            flex-wrap: wrap;
+        }
+
+        &__row{
+            flex-basis:30%
+        }
+    }
+  
+  }

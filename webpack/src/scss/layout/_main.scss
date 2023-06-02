@@ -1,0 +1,91 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.main {
+  background: url('../img/header-img.png');
+  @include image;
+  min-width: 320px;
+  width: 100%;
+  height: 718px;
+  position: relative;
+  margin-bottom: 80px;
+  @include flex($direction: column,
+    $justifyContent: space-between,
+    $alignItems: center);
+
+  &__top {
+    @include flex(15px,
+      $direction: column,
+      $justifyContent: center,
+      $alignItems: center);
+    padding-top: 50px;
+  }
+
+  &__bottom {
+    @include flex(10px,
+      $direction: column,
+      $justifyContent: center,
+      $alignItems: center);
+    position: absolute;
+    bottom: -50px;
+  }
+
+  &__bottom-text {
+    @include myfont(14px, 400, $Montserrat, $main-info-color);
+  }
+
+  &__button {
+    @include button($bgColor: $purple);
+    padding: 12px 32px;
+    @include myfont(18px, 700, $Montserrat, $white);
+    cursor: pointer;
+    
+    &:hover{
+      background-color: $white;
+      color:$purple;
+    }
+  }
+
+  &__header-text {
+    @include myfont(48px, 700, $Montserrat, $white);
+    @include flex($justifyContent: center,
+      $alignItems: center);
+  }
+
+  &__description {
+    @include myfont(18px, 400, $Montserrat, $purple);
+    line-height: 24px;
+    min-width: 298px;
+    text-align: center;
+  }
+
+  &__info {
+    @include myfont(14px, 400, $Montserrat, $main-info-color);
+    line-height: 14px;
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 320px;
+  }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 992px) {
+  .container {
+    max-width: 768px;
+  }
+
+}
+
+@media screen and (min-width: 993px) {
+  .container {
+    max-width: 1200px;
+  }
+}
