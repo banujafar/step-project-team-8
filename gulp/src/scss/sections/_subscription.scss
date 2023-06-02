@@ -1,0 +1,145 @@
+.subscription {
+  background-color: #4b3b4e;
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+    .subcription__heading {
+      @include myfont(28px, 700, $Montserrat, #ffffff);
+    }
+
+    .subscription__grid {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-direction: column;
+      padding-bottom: 18px;
+
+      &__card {
+        width: 257px;
+        height: 457px;
+        background: rgba(255, 255, 255, 0.11);
+        mix-blend-mode: normal;
+
+        display: flex;
+        flex-direction: column;
+
+        &__header {
+          background: rgba(255, 255, 255, 0.06);
+          mix-blend-mode: normal;
+          width: 100%;
+          height: 97px;
+          margin-bottom: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-transform: uppercase;
+          @include myfont(24px, 400, $Montserrat, #ffffff);
+        }
+        &__body {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          &__price {
+            @include myfont(60px, 400, $Montserrat, #ffffff);
+            span {
+              font-weight: 700;
+            }
+            margin-bottom: 20px;
+          }
+          &__month {
+            text-transform: uppercase;
+            @include myfont(14px, 400, $Montserrat, #ffffff);
+            margin-bottom: 38px;
+          }
+          &__divider {
+            width: 60px;
+            height: 5px;
+            background-color: #8d81ac;
+            margin-bottom: 30px;
+          }
+          &__offers {
+            @include myfont(16px, 400, $Montserrat, #ffffff);
+            margin-bottom: 37px;
+          }
+          &__purchase {
+            text-transform: uppercase;
+            @include myfont(15px, 400, $Montserrat, #ffffff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 38px;
+            background: rgba(255, 255, 255, 0.15);
+            mix-blend-mode: normal;
+            border: none;
+            cursor: pointer;
+            border-radius: 90px;
+          }
+        }
+        &--active {
+          width: 299px;
+          height: 560px;
+          background: rgb(70, 48, 72, 0.2);
+          mix-blend-mode: normal;
+          .subscription__grid__card {
+            &__header {
+              background-color: rgba(0, 0, 0, 0.11);
+            }
+            &__body {
+              &__price {
+                font-size: 82px;
+              }
+              &__offers {
+                margin-bottom: 83px;
+              }
+              &__divider {
+                margin-bottom: 40px;
+              }
+              &__month {
+                margin-bottom: 46px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1140px) {
+  .subscription__grid__card.first {
+    justify-self: end;
+  }
+  .subscription {
+    @include image();
+    background-image: url("../../../dist/img/Layer2.png");
+  }
+  .subscription .container {
+    padding: 95px 10px;
+  }
+  .subscription .container .subscription__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+    column-gap: 25px;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  .subscription {
+    @include image();
+    background-image: url("../../../dist/img/Layer2.png");
+  }
+  .subscription .container {
+    padding: 95px 10px;
+  }
+  .subscription .container .subscription__grid {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
