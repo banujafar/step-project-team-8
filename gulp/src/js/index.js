@@ -1,19 +1,32 @@
 const hamburgerMenu = document.querySelector(".hamburger-menu"),
     dropMenuList = document.querySelector(".drop-menu__list"),
+    line=document.querySelectorAll(".line")
     // clickedMenu = document.querySelector(".clicked-menu"),
     dropMenuItem = document.querySelectorAll(".drop-menu__item"),
     dropMenuLink = document.querySelectorAll(".drop-menu__link");
+    toggleButton = document.querySelector(".hamburger-toggle");
+
+
+
 eventListeners();
 
 function eventListeners() {
-    hamburgerMenu.addEventListener("click", toggleMenu);
+    toggleButton.addEventListener("click", toggleMenu);
     dropMenuList.addEventListener("click", addActiveToListItems);
 }
 
-function toggleMenu() {
-    dropMenuList.classList.toggle("active");
-    hamburgerMenu.firstElementChild.classList.toggle("disabled");
-    hamburgerMenu.classList.toggle("hamburger-menu--active");
+function toggleMenu(e) {
+    toggleButton.classList.toggle("open");
+  dropMenuList.classList.toggle("active");
+//     dropMenuList.classList.toggle("active");
+//     for(let i=0;i<line.length;i++){
+//         line[i].classList.toggle('disabled')
+//     }
+//     //line.classList.toggle('disabled')
+//     console.log(e.target)
+//    // hamburgerMenu.children.classList.map(i=>i.toggle("disabled"));
+//     hamburgerMenu.classList.toggle("hamburger-menu--active");
+//     //console.log(hamburgerMenu.childNodes)
 }
 function removeActiveClasses() {
     for (let i = 0; i < dropMenuItem.length; i++) {
