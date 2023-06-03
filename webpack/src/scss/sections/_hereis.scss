@@ -24,10 +24,20 @@
       align-items: center;
       flex-direction: column;
       gap: 25px;
+      width: 100%;
+      justify-content: space-evenly;
+      &__img {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       &__info {
+        flex: 4;
         display: flex;
         flex-direction: column;
         align-items: center;
+
         gap: 14px;
         &__subheader {
           @include myfont(16px, 400, $Montserrat, $dark-font);
@@ -62,6 +72,7 @@
   }
   .hereis .container {
     gap: 55px;
+    padding-bottom: 30px;
   }
   .hereis .container .card {
     flex-direction: row;
