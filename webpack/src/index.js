@@ -1,20 +1,20 @@
 import './scss/styles.scss';
-const hamburgerMenu = document.querySelector(".hamburger-menu"),
-    dropMenuList = document.querySelector(".drop-menu__list"),
-    // clickedMenu = document.querySelector(".clicked-menu"),
+const dropMenuList = document.querySelector(".drop-menu__list"),
     dropMenuItem = document.querySelectorAll(".drop-menu__item"),
-    dropMenuLink = document.querySelectorAll(".drop-menu__link");
+    dropMenuLink = document.querySelectorAll(".drop-menu__link"),
+    toggleButton = document.querySelector(".hamburger-toggle");
+
 eventListeners();
 
 function eventListeners() {
-    hamburgerMenu.addEventListener("click", toggleMenu);
+    toggleButton.addEventListener("click", toggleMenu);
     dropMenuList.addEventListener("click", addActiveToListItems);
 }
 
-function toggleMenu() {
+function toggleMenu(e) {
+    toggleButton.classList.toggle("open");
     dropMenuList.classList.toggle("active");
-    hamburgerMenu.firstElementChild.classList.toggle("disabled");
-    hamburgerMenu.classList.toggle("hamburger-menu--active");
+    console.log(toggleButton)
 }
 function removeActiveClasses() {
     for (let i = 0; i < dropMenuItem.length; i++) {
@@ -28,10 +28,11 @@ function addActiveToListItems(e) {
     if (target.classList.contains("drop-menu__item")) {
         removeActiveClasses();
         target.classList.add("drop-menu__item--active");
-        target.querySelector(".drop-menu__link").classList.add("drop-menu__link--active");
+        dropMenuLink.classList.add("drop-menu__link--active");
     } else if (target.classList.contains("drop-menu__link")) {
         removeActiveClasses();
         target.parentElement.classList.add("drop-menu__item--active");
         target.classList.add("drop-menu__link--active");
     }
 }
+

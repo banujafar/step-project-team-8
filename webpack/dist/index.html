@@ -3,57 +3,65 @@
 
 <head>
   <meta charset="utf-8" />
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forkio App</title>
-<script defer src="scripts.min0cc2c7185019e3b0eda4.js"></script></head>
+  <title>
+    Forkio App
+  </title>
+<script defer src="scripts.min59fa44b1680830cc75d8.js"></script></head>
 
-<body>
+<body> 
+  <!-- !Main starts here-->
+  <div class="main">
+    
   <!-- !Navbar  -->
   <nav class="navbar">
     <div class="navbar__top">
       <div class="navbar__logo">
-        <img src='./img/Logo.png' alt="navbar_logo" class="navbar__image">
-      <h1 class="navbar__header-text ">FORKIO</h1>
+        <img src="./img/Logo.png" alt="navbar_logo" class="navbar__image">
+        <h1 class="navbar__header-text ">FORKIO</h1>
       </div>
-      <button class="navbar__button">Buy Now</button>
+      <button class="navbar__button"><span>Buy Now</span></button>
     </div>
-        s
-       
-<!-- !Navbar menu for Mobile -->
-<div class="drop-menu">
-  
-  <div class="hamburger-menu">
-    <img src="./img/hamburger-menu.png" alt="hamburger_menu"  >
-  </div>
-  <ul class="drop-menu__list">
-    <li class="drop-menu__item drop-menu__item--active"><a href="#" class="drop-menu__link drop-menu__link--active">Overview</a></li>
-    <li class="drop-menu__item"><a href="#" class="drop-menu__link">About Fork</a></li>
-    <li class="drop-menu__item"><a href="#" class="drop-menu__link">Buying Options</a></li>
-    <li class="drop-menu__item"><a href="#" class="drop-menu__link">Support</a></li>
-   </ul>
-</div>
-       <!-- !Navbar menu for Desktop -->
-       <ul class="navbar-menu">
-        <li class="navbar-menu__item"><a href="#" class="navbar-menu__link navbar-menu--active">Overview</a></li>
-        <li class="navbar-menu__item"><a href="#" class="navbar-menu__link">About Fork</a></li>
-        <li class="navbar-menu__item"><a href="#" class="navbar-menu__link">Buying Options</a></li>
-        <li class="navbar-menu__item"><a href="#" class="navbar-menu__link">Support</a></li>
-       </ul>
-    
+
+
+
+ 
+    <!-- !Navbar menu for Mobile -->
+    <div class="drop-menu">
+
+      <button class="hamburger-toggle">
+        <span class="hamburger-icon"></span>
+      </button>
+      
+      <ul class="drop-menu__list">
+        <li class="drop-menu__item drop-menu__item--active"><a href="#"
+            class="drop-menu__link drop-menu__link--active">Overview</a></li>
+        <li class="drop-menu__item"><a href="#" class="drop-menu__link">About Fork</a></li>
+        <li class="drop-menu__item"><a href="#" class="drop-menu__link">Buying Options</a></li>
+        <li class="drop-menu__item"><a href="#" class="drop-menu__link">Support</a></li>
+      </ul>
+    </div>
+    <!-- !Navbar menu for Desktop -->
+    <ul class="navbar-menu">
+      <li class="navbar-menu__item"><a href="#" class="navbar-menu__link navbar-menu--active">Overview</a></li>
+      <li class="navbar-menu__item"><a href="#" class="navbar-menu__link">About Fork</a></li>
+      <li class="navbar-menu__item"><a href="#" class="navbar-menu__link">Buying Options</a></li>
+      <li class="navbar-menu__item"><a href="#" class="navbar-menu__link">Support</a></li>
+    </ul>
+
   </nav>
-   <!-- !Main starts here-->
-<main class="main">
-  <div class="main__top">
-     <h2 class="main__header-text">Fork App</h2>
-  <p class="main__description">A Real Gamechanger In The World Of Web-Development</p>
-  <span class="main__info">v. 2.8 For Mac and Windows</span>
+    <div class="main__top">
+      <h2 class="main__header-text">Fork App</h2>
+      <p class="main__description">A Real Gamechanger In The World Of Web-Development</p>
+      <span class="main__info">v. 2.8 For Mac and Windows</span>
+    </div>
+    <div class="main__bottom">
+      <button class="main__button">Download For Free Now</button>
+      <span class="main__bottom-text">Unlimited 30-Days Trial Period</span>
+    </div>
   </div>
-  <div class="main__bottom">
-    <button class="main__button">Download For Free Now</button>
-    <span class="main__bottom-text">Unlimited 30-Days Trial Period</span>
-  </div>
-</main>
-<!-- !Main ends here-->
+  <!-- !Main ends here-->
 
   <section class="revolution">
     <div class="container">
@@ -74,6 +82,7 @@
           </svg>
           Watch
           <div class="stats">1,397</div>
+          <img src="./img/carret.svg" alt="carret" srcset="" class="carret">
 
         </button>
         <button>
@@ -85,6 +94,7 @@
           </svg>
           Star
           <div class="stats">21,038</div>
+          <img src="./img/carret.svg" alt="carret" srcset="" class="carret">
         </button>
         <button>
           <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true"
@@ -95,6 +105,7 @@
           </svg>
           Fork
           <div class="stats">4,391</div>
+          <img src="./img/carret.svg" alt="carret" srcset="" class="carret">
         </button>
 
 
@@ -109,7 +120,9 @@
         &lt; Here is what you get&gt;
       </h2>
       <div class="card">
-        <img src="./img/card1.png" alt="icon" class="card__icon">
+        <div class="card__img">
+          <img src="./img/card1.png" alt="icon" class="card__icon">
+        </div>
 
         <div class="card__info">
           <div class="card__info__subheader">
@@ -126,7 +139,9 @@
       </div>
 
       <div class="card">
-        <img src="./img/card2.png" alt="icon" class="card__icon">
+        <div class="card__img">
+          <img src="./img/card2.png" alt="icon" class="card__icon">
+        </div>
 
         <div class="card__info">
           <div class="card__info__subheader">
@@ -147,7 +162,9 @@
       </div>
 
       <div class="card">
-        <img src="./img/card3.png" alt="icon" class="card__icon">
+        <div class="card__img">
+          <img src="./img/card3.png" alt="icon" class="card__icon">
+        </div>
 
         <div class="card__info">
           <div class="card__info__subheader">
@@ -167,7 +184,10 @@
 
       </div>
       <div class="card">
-        <img src="./img/card4.png" alt="icon" class="card__icon">
+        <div class="card__img">
+          <img src="./img/card4.png" alt="icon" class="card__icon">
+        </div>
+
 
         <div class="card__info">
           <div class="card__info__subheader">
@@ -200,38 +220,200 @@
       <div class="people-talk__container">
         <div class="people-talk__row">
           <img src="./img/peopletalk/logo1.png" alt="" class="people-talk__img">
-          <p class="people-talk__text">Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet. Proin id dignissim magna. Sed varius urna et pulvinar venenatis.</p>
+          <p class="people-talk__text">Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet. Proin id
+            dignissim magna. Sed varius urna et pulvinar venenatis.</p>
         </div>
         <div class="people-talk__row">
           <img src="./img/peopletalk/logo2.png" alt="" class="people-talk__img">
-          <p class="people-talk__text">Donec euismod dolor ut ultricies consequat. Vivamus urna ipsum, rhoncus molestie neque ac, mollis eleifend nibh.</p>
+          <p class="people-talk__text">Donec euismod dolor ut ultricies consequat. Vivamus urna ipsum, rhoncus molestie
+            neque ac, mollis eleifend nibh.</p>
         </div>
         <div class="people-talk__row">
           <img src="./img/peopletalk/logo3.png" alt="" class="people-talk__img">
-          <p class="people-talk__text">In efficitur in velit et tempus. Duis nec odio dapibus, suscipit erat fringilla, imperdiet nibh. Morbi tempus auctor felis ac vehicula. </p>
+          <p class="people-talk__text">In efficitur in velit et tempus. Duis nec odio dapibus, suscipit erat fringilla,
+            imperdiet nibh. Morbi tempus auctor felis ac vehicula. </p>
         </div>
         <div class="people-talk__row">
           <img src="./img/peopletalk/logo4.png" alt="" class="people-talk__img">
-          <p class="people-talk__text">Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet. Proin id dignissim magna. Sed varius urna et pulvinar venenatis. </p>
+          <p class="people-talk__text">Sed vestibulum scelerisque urna, eu finibus leo facilisis sit amet. Proin id
+            dignissim magna. Sed varius urna et pulvinar venenatis. </p>
         </div>
         <div class="people-talk__row">
           <img src="./img/peopletalk/logo5.png" alt="" class="people-talk__img">
-          <p class="people-talk__text">Praesent ut eros tristique, malesuada lectus vel, lobortis massa. Nulla faucibus lorem id arcu consequat faucibus. </p>
+          <p class="people-talk__text">Praesent ut eros tristique, malesuada lectus vel, lobortis massa. Nulla faucibus
+            lorem id arcu consequat faucibus. </p>
         </div>
         <div class="people-talk__row">
           <img src="./img/peopletalk/logo6.png" alt="" class="people-talk__img">
-          <p class="people-talk__text">Fusce pharetra erat id odio blandit, nec pharetra eros venenatis. Pellentesque porttitor cursus massa et vestibulum.</p>
+          <p class="people-talk__text">Fusce pharetra erat id odio blandit, nec <br> pharetra eros venenatis. Pellentesque
+            porttitor cursus massa et vestibulum.</p>
         </div>
       </div>
       <p class="people-talk__sub-text">
-        Duis lobortis arcu sed arcu tincidunt feugiat. Nulla nisi mauris, facilisis vitae aliquet id, imperdiet quis nibh. Donec eget elit eu libero tincidunt consequat nec elementum orci. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+        Duis lobortis arcu sed arcu tincidunt feugiat. Nulla nisi mauris, facilisis vitae aliquet id, imperdiet quis
+        nibh. Donec eget elit eu libero tincidunt consequat nec elementum orci. Cum sociis natoque penatibus et magnis
+        dis parturient montes, nascetur ridiculus mus.
       </p>
     </div>
-    
-  </section>
- <!-- !People are talking about ends here -->
 
-  <script src="dist/js/scripts.min.js"></script>
+  </section>
+  <!-- !People are talking about ends here -->
+
+
+  <!-- Subscription section starts here -->
+
+  <section class="subscription">
+    <div class="container">
+      <h2 class="subcription__heading">Fork Subscription Pricing</h2>
+      <div class="subscription__grid">
+        <div class="subscription__grid__card first">
+          <div class="subscription__grid__card__header">
+            students
+
+          </div>
+          <div class="subscription__grid__card__body">
+            <h3 class="subscription__grid__card__body__price">
+              $<span>29</span>
+
+
+            </h3>
+            <p class="subscription__grid__card__body__month">
+              per month
+
+            </p>
+            <div class="subscription__grid__card__body__divider">
+
+
+            </div>
+            <p class="subscription__grid__card__body__offers">
+              Personal License
+
+
+            </p>
+
+            <button class="subscription__grid__card__body__purchase">
+              Purchase
+            </button>
+
+
+
+
+
+          </div>
+        </div>
+        <div class="subscription__grid__card">
+          <div class="subscription__grid__card__header">
+            professional
+
+          </div>
+          <div class="subscription__grid__card__body">
+            <h3 class="subscription__grid__card__body__price">
+              $<span>59</span>
+
+
+            </h3>
+            <p class="subscription__grid__card__body__month">
+              per month
+
+            </p>
+            <div class="subscription__grid__card__body__divider">
+
+
+            </div>
+            <p class="subscription__grid__card__body__offers">
+              Professional License <br /> Email Support
+
+
+            </p>
+
+            <button class="subscription__grid__card__body__purchase">
+              Purchase
+            </button>
+
+
+
+
+
+          </div>
+        </div>
+        <div class="subscription__grid__card subscription__grid__card--active">
+          <div class="subscription__grid__card__header">
+            agency
+
+          </div>
+          <div class="subscription__grid__card__body">
+            <h3 class="subscription__grid__card__body__price">
+              $<span>99</span>
+
+
+            </h3>
+            <p class="subscription__grid__card__body__month">
+              per month
+
+            </p>
+            <div class="subscription__grid__card__body__divider">
+
+
+            </div>
+            <p class="subscription__grid__card__body__offers">
+              1-12 Team Members<br />Phone Support
+
+
+            </p>
+
+            <button class="subscription__grid__card__body__purchase">
+              Purchase
+            </button>
+
+
+
+
+
+          </div>
+        </div>
+        <div class="subscription__grid__card">
+          <div class="subscription__grid__card__header">
+            enterprise
+
+          </div>
+          <div class="subscription__grid__card__body">
+            <h3 class="subscription__grid__card__body__price">
+              $<span>159</span>
+
+
+            </h3>
+            <p class="subscription__grid__card__body__month">
+              per month
+
+            </p>
+            <div class="subscription__grid__card__body__divider">
+
+
+            </div>
+            <p class="subscription__grid__card__body__offers">
+              Unlimited Team Members<br />24/ 7 Phone Support
+
+
+            </p>
+
+            <button class="subscription__grid__card__body__purchase">
+              Purchase
+            </button>
+
+
+
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Subscription section ends here -->
+
+
+  <script src="dist/scripts.min.js"></script>
 </body>
 
 </html>
