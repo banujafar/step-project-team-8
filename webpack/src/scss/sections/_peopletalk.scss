@@ -1,81 +1,128 @@
-.people-talk{
-background:url('../img/peopletalk/Layer 1.png');
-@include image();
-min-height: 768px;
-min-width: 320px;
-padding-top: 100px;
-padding-bottom: 30px;
- &__header-text{
-    @include myfont(36px, 700, $Montserrat, $white);
-    text-align: center;
-    margin-bottom: 50px;
- }
- &__container{
-    @include flex(30px,
-      $direction: column,
-      $justifyContent: center,
-      $alignItems: center);
- }
- &__row{
-    @include flex(15px,
-      $direction: column,
-      $justifyContent: center,
-      $alignItems: center);
- }
- &__text{
-    @include myfont(16px, 700, $Lato, $white);
-    font-style: italic;
-    line-height: 24px;
-    text-align: center;
- }
- &__sub-text{
-    @include myfont(14px, 700, $Lato, $sub-text-color);
-    text-align: center;
-    margin:30px auto;
-    line-height: 21px;
-    position: relative;
-    max-width: 887px;
-    &::after{
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left:5%;
-        width:90%;
-        height: 2px;
-        background-color: $hr-color;
+.people-talk {
+    background: url('../img/peopletalk/Layer 1.png');
+    @include image();
+    min-height: 768px;
+    min-width: 320px;
+    padding: 57px 0 38px;
+
+    &__header-text {
+        @include myfont(36px, 700, $Montserrat, $white);
+        text-align: center;
+        margin-bottom: 53px;
+        line-height: 48px;
     }
- }
+
+    &__container {
+        @include flex(45px,
+            $direction: column,
+            $justifyContent: center,
+            $alignItems: center);
+    }
+
+    &__row {
+        @include flex(33px,
+            $direction: column,
+            $justifyContent: center,
+            $alignItems: center);
+        padding: 0 20px;
+
+        &:nth-child(5) {
+            padding: 0 8px;
+        }
+    }
+
+    &__text {
+        @include myfont(16px, 700, $Lato, $white);
+        font-style: italic;
+        line-height: 24px;
+        text-align: center;
+    }
+
+    &__sub-text {
+        @include myfont(14px, 700, $Lato, $sub-text-color);
+        text-align: center;
+        margin: 37px auto 0;
+        line-height: 21px;
+        position: relative;
+        padding: 0 20px;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 5%;
+            width: 90%;
+            height: 2px;
+            background-color: $hr-color;
+        }
+    }
 }
 
 
 @media screen and (min-width: 481px) and (max-width: 992px) {
-    .people-talk{
-        &__container{
-            @include flex(55px,
-            $justifyContent: center,
-            $alignItems: center);
-            flex-wrap: wrap;
-        }
-        &__row{
-            flex-basis: 45%;
-        }
-       
-    }
-  
-  }
+    .people-talk {
+        padding-top: 85.91px;
+        padding-bottom: 19.5px;
 
-  @media screen and (min-width: 993px) {
-    .people-talk{
-        &__container{
+        &__container {
             @include flex(55px,
-            $justifyContent: center,
-            $alignItems: center);
+                $justifyContent: center,
+                $alignItems: center);
             flex-wrap: wrap;
         }
 
-        &__row{
-            flex-basis:30%
+        &__header-text {
+            margin-bottom: 85.09px;
+            font-size: 42px;
+            line-height: 44px;
+        }
+
+        &__row {
+            padding: 0;
+            flex-basis: 46%;
+            gap: 22px;
+
+            &:nth-child(4) {
+                padding-top: 25px;
+            }
+
+        }
+
+        &__sub-text {
+
+            margin-top: 67.5px;
         }
     }
-  
-  }
+}
+
+@media screen and (min-width: 993px) {
+    .people-talk {
+        background-repeat: no-repeat;
+        padding-top: 108.11px;
+
+        &__container {
+            @include flex($justifyContent: center,
+                $alignItems: center);
+            flex-wrap: wrap;
+            row-gap: 116px;
+        }
+
+        &__header-text {
+            font-size: 48px;
+            line-height: 50px;
+            margin-bottom: 84.89px;
+        }
+
+        &__row {
+            padding: 0;
+            flex-basis: 30%;
+            gap: 25px;
+        }
+
+        &__sub-text {
+            margin-top: 118.5px;
+            max-width: 887px;
+        }
+    }
+
+}
